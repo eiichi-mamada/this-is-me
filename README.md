@@ -1,24 +1,43 @@
-# README
+# this-is-me DB設計
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null:false|
+|email|string|null:false|
+|password|string|null:false|
+|sexual|integer||
+|age|string||
+|private|integer||
+### Association
+- has_many : comments
+- has_many : answers
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## comments テーブル
+|Column|Type|Options|
+|------|----|-------|
+|user|reference|foreign_key:true|
+|text|text||
+|status|text|null:false|
+### Association
+- belongs_to : user
 
-Things you may want to cover:
+## answers テーブル
+|Column|Type|Options|
+|------|----|-------|
+|user|reference|foreign_key:true|
+|question|reference|foreign_key:true|
+|reason|text|null:false|
+|rank_number|integer|null:false|
+### Association
+- belongs_to : user
+- belongs_to : question
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## questionsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|answer|reference|foreign_key:true|
+|content|text|null: false|
+|rank|string|null: false|
+|status|integer|null: false|
+### Association
+- has_one : answer
