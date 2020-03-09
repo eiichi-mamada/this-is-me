@@ -1,0 +1,19 @@
+question new
+
+= form_with model: @question, local: true, class: 'form' do |form|
+  content
+  = form.text_area :content, placeholder: "content", class: 'title'
+  rank
+  = form.select :rank, {}, {}, {class: "select-rank"} do
+    %option{value: 0} ---
+    %option{value: 1} 1
+    %option{value: 2} 2
+    %option{value: 3} 3
+    %option{value: 4} 4
+    %option{value: 5} 5
+  status
+  = form.select :status, {}, {}, {class: "select-status"} do
+    %option{value: 0} 過去
+    %option{value: 1} 現在
+    %option{value: 2} 未来
+  = form.submit "送信", class: 'send'
