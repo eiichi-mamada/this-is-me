@@ -25,6 +25,6 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:content, :rank, :status)
+    params.require(:question).permit(:content, :status)
   end
 end
