@@ -1,0 +1,39 @@
+@import url(https://fonts.googleapis.com/css?family=Permanent+Marker);
+@import url(https://fonts.googleapis.com/css?family=Montserrat+Subrayada);
+@import url(https://fonts.googleapis.com/css?family=Londrina+Shadow);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700);
+
+
+
+
+.header{
+  height: 100vh;
+  width:  100%;
+  &--top{
+    height: 60px;
+    width:  100%;
+  }
+  &--center{
+    height: 30vh;
+    text-align: center;
+    margin-top: 20px;
+    &__h1{
+      font-size: 150px;
+      font-family: 'Londrina Shadow', cursive;
+    }
+    &__h2{
+      &--comment-text{
+        height: 30px;
+        font-size: 30px;
+        line-height: 30px;
+        font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+      }
+    }
+  }
+  &--bottom{
+    &__log-in{
+      text-align: center;
+      height: 20px;
+    }
+  }
+}

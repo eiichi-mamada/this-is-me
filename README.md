@@ -1,4 +1,4 @@
-unko# this-is-me DB設計
+# this-is-me DB設計
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|

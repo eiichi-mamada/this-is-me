@@ -1,8 +1,20 @@
-%h1.rest トップページ
 - if user_signed_in?
-  %h2 ログインしています
   = link_to "ログアウト", destroy_user_session_path, method: :delete
 - else
-  %h2 ログインしていません
-  = link_to "新規登録", new_user_registration_path
-  = link_to "ログイン", new_user_session_path
+  .header
+    .header--top
+      .header--top__new-icon
+        = link_to "新規登録", new_user_registration_path
+    .header--center
+      .header--center__h1
+        This is Me
+      %ul.header--center__h2
+        %li.header--center__h2--comment-text
+          過去の自分
+        %li.header--center__h2--comment-text
+          未来の目標
+        %li.header--center__h2--comment-text
+          現在やらなくてはいけないこと
+    .header--bottom
+      .header--bottom__log-in
+        = link_to "ログイン", new_user_session_path
