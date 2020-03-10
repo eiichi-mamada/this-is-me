@@ -9,17 +9,50 @@
 .header{
   height: 100vh;
   width:  100%;
+  background-image: url("/assets/fantasy-4878767_1920.jpg");
+  background-size: cover;
   &--top{
     height: 60px;
     width:  100%;
+    display: flex;
+    .new01{
+      width: 34%;
+      height: 60px;
+      &--hidden{
+        height: 90px;
+        transform: rotateZ(11deg);
+        transform-origin: right bottom;
+        background: black;
+      }
+    }
+    &__new{
+      height: 60px;
+      width: 33%;
+      right: 0;
+      position: relative;
+      &--btn{
+        position: absolute;
+        top: 0;
+        right: 0;
+        text-align: right;
+        margin-right: 50px;
+        line-height: 60px;
+        a{
+          text-decoration: none;
+          color: red;
+        }
+      }
+
+    }
   }
   &--center{
-    height: 30vh;
+    height: 45vh;
     text-align: center;
     margin-top: 20px;
     &__h1{
-      font-size: 150px;
+      font-size: 200px;
       font-family: 'Londrina Shadow', cursive;
+      color: yellow;
     }
     &__h2{
       &--comment-text{
@@ -32,8 +65,17 @@
   }
   &--bottom{
     &__log-in{
+      margin: 0 auto;
       text-align: center;
-      height: 20px;
+      height: 30px;
+      background: green;
+      width: 80px;
+      line-height: 30px;
+      border-radius: 5px;
+      a{
+        text-decoration: none;
+        color: black;
+      }
     }
   }
 }

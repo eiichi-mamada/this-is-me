@@ -3,8 +3,12 @@
 - else
   .header
     .header--top
-      .header--top__new-icon
-        = link_to "新規登録", new_user_registration_path
+      .header--top__new
+      .header--top__new
+      .header--top__new.new01
+        .new01--hidden
+        .header--top__new--btn
+          = link_to "新規登録", new_user_registration_path
     .header--center
       .header--center__h1
         This is Me
