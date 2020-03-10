@@ -1,0 +1,10 @@
+question_index
+%p
+- @questions.each do |question|
+  |
+  質問：
+  = question.content
+  ステータス：
+  = question.status
+  |
+  %p

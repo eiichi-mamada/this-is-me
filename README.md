@@ -5,9 +5,9 @@ unko# this-is-me DB設計
 |name|string|null:false|
 |email|string|null:false|
 |password|string|null:false|
-|sexual|integer||
-|age|string||
-|private|integer||
+|sexual|integer|null:false|
+|birthday|date|null:false|
+|admin|boolean||
 ### Association
 - has_many : comments
 - has_many : answers
@@ -35,9 +35,6 @@ unko# this-is-me DB設計
 ## questionsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|answer|reference|foreign_key:true|
 |content|text|null: false|
-|rank|string|null: false|
 |status|integer|null: false|
 ### Association
-- has_one : answer
