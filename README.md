@@ -36,6 +36,5 @@ unko# this-is-me DB設計
 |Column|Type|Options|
 |------|----|-------|
 |content|text|null: false|
-|rank|integer|null: false|
 |status|integer|null: false|
 ### Association
