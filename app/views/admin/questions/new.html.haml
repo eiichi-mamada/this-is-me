@@ -1,7 +1,7 @@
 .question
   .question__form
     question new
-    = form_with model: @question, local: true, class: 'form' do |form|
+    = form_with model: [:admin, @question], local: true, class: 'form' do |form|
       = form.label :content, "content" do
         = form.text_area :content, placeholder: "content", class: 'title'
       = form.label :status, "status" do

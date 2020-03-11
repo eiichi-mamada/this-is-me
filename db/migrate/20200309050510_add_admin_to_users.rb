@@ -3,6 +3,6 @@ class AddAdminToUsers < ActiveRecord::Migration[5.2]
     add_column :users, :admin, :boolean, default: false
     add_column :users, :sexual, :integer
     remove_column :users, :age
-    add_column :users, :birthday, :date, null: false
+    add_column :users, :birthday, :date
   end
 end
