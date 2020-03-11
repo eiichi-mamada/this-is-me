@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 2020_03_10_094924) do
 
   create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content", null: false
-    t.integer "rank", null: false
     t.integer "status", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

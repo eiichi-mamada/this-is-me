@@ -1,0 +1,12 @@
+.question
+  .question__form
+    question new
+    = form_with model: [:admin, @question], local: true, class: 'form' do |form|
+      = form.label :content, "content" do
+        = form.text_area :content, placeholder: "content", class: 'title'
+      = form.label :status, "status" do
+        = form.select :status, {}, {}, {class: "select-status"} do
+          %option{value: 0} 過去
+          %option{value: 1} 現在
+          %option{value: 2} 未来
+      = form.submit "送信", class: 'send'

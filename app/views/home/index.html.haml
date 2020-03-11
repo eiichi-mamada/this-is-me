@@ -1,4 +1,10 @@
-- if user_signed_in?
+%h1.rest トップページ
+- if user_signed_in? && current_user.admin == true
+  %h2 管理者でログインしています
+  = link_to "質問登録", new_admin_question_path
+  = link_to "ログアウト", destroy_user_session_path, method: :delete
+- elsif user_signed_in?
+  %h2 ログインしています
   = link_to "ログアウト", destroy_user_session_path, method: :delete
 - else
   .header
