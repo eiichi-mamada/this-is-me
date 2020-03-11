@@ -32,4 +32,7 @@ class Admin::QuestionsController < ApplicationController
     params.require(:question).permit(:content, :status)
   end
 
+
+
+
 end
