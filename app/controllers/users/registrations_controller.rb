@@ -9,6 +9,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
     params[:user][:birthday] = birthday_join
     params.require(:user)
     @user = User.create(sign_up_params)
+    unless @user.valid?
+      render :new and return
+    end
+    sign_in(:user, @user)
     redirect_to root_path
   end
 
