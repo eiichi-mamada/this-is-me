@@ -26,11 +26,13 @@ unko# this-is-me DB設計
 |------|----|-------|
 |user|reference|foreign_key:true|
 |question|reference|foreign_key:true|
+|candidates|reference|foreign_key:true|
 |reason|text|null:false|
 |rank_number|integer|null:false|
 ### Association
 - belongs_to : user
 - belongs_to : question
+- belongs_to : candidates
 
 ## questionsテーブル
 |Column|Type|Options|
@@ -38,3 +40,13 @@ unko# this-is-me DB設計
 |content|text|null: false|
 |status|integer|null: false|
 ### Association
+- has_many : candidates
+
+## candidatesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|sub_content|string|null: false|
+|question_id|reference|foreign_key:true|
+### Association
+- belongs_to : question
+- belongs_to : answer
