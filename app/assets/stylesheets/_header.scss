@@ -1,0 +1,30 @@
+.header{
+  height: 70px;
+  width: 100%;
+  background: black;
+  display: flex;
+  &__left{
+    width: 33%;
+    &--btn{
+      color: #eee;
+      font-size: 40px;
+      align-items: center;
+      margin-left: 20px;
+    }
+  }
+  &__center{
+    width: 34%;
+    line-height: 70px;
+    text-align: center;
+    font-size: 60px;
+    opacity: 0.3;
+    font-family: 'Londrina Shadow', cursive;
+    a{
+      text-decoration: none;
+      color: yellow;
+    }
+  }
+  &__right{
+    width: 33%;
+  }
+}
