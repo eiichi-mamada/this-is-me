@@ -38,3 +38,13 @@ unko# this-is-me DB設計
 |content|text|null: false|
 |status|integer|null: false|
 ### Association
+- has_many : candidates
+
+## candidatesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|content|string|null: false|
+|question_id|reference|foreign_key:true|
+### Association
+- belongs_to : question
+- belongs_to : answer
