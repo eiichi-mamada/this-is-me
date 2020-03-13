@@ -1,0 +1,41 @@
+- if current_user.admin == true
+  .header
+    .header__left
+      = link_to(root_path, class: "header__left--btn") do
+        %i.fa.fa-coffee.header__left--btn__icon
+    .header__center
+      .header__center__text
+        = link_to(root_path, class: "header__center--btn") do
+          This is Me
+    .header__right
+      .header__right--menu
+        %i.fa.fa-bars.header__right--menu__icon
+        .header__right--menu__file
+          .header__right--menu__file--main-user.point
+            = link_to "質問登録", new_admin_question_path, class: "color-red01"
+          .header__right--menu__file--answer.point
+            = link_to "answer", past_new_answers_path, class: "color-red02"
+          .header__right--menu__file--comment.point
+            = link_to "comment", new_comment_path, class: "color-red03"
+          .header__right--menu__file--log-out.point
+            = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "color-red04"
+
+- else
+  .header
+    .header__left
+      = link_to(root_path, class: "header__left--btn") do
+        %i.fa.fa-coffee.header__left--btn__icon
+    .header__center
+      .header__center__text
+        = link_to(root_path, class: "header__center--btn") do
+          This is Me
+    .header__right
+      .header__right--menu
+        %i.fa.fa-bars.header__right--menu__icon
+        .header__right--menu__file
+          .header__right--menu__file--answer.point
+            = link_to "answer", past_new_answers_path, class: "color-red02"
+          .header__right--menu__file--comment.point
+            = link_to "comment", new_comment_path, class: "color-red03"
+          .header__right--menu__file--log-out.point
+            = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "color-red04"
