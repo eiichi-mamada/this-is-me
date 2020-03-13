@@ -18,8 +18,8 @@
             = form.radio_button :rank, 3
             = form.label "1"
             = form.radio_button :rank, 4
-        = form.label :content, "content" do
-          = form.text_area :content, placeholder: "content", class: 'title'
+        = form.label :reason, "reason" do
+          = form.text_area :reason, placeholder: "reason", class: 'title'
         = form.submit "送信", class: 'send'
   .answer-body__right
     = link_to admin_questions_path do

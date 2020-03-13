@@ -1,5 +1,23 @@
 - if user_signed_in?
   = render 'header'
+  .main-padding
+  .main-text
+    .main-text__left
+      %i.fa.fa-certificate.main-text__left--icon
+        .main-text__left--icon__click
+          クリック
+      .main-text__left--past-bar
+        %i.fa.fa-times.times
+    .main-text__center
+      %i.fa.fa-certificate.main-text__center--icon
+        .main-text__center--icon__click
+          クリック
+      .main-text__center--present-bar
+    .main-text__right
+      %i.fa.fa-certificate.main-text__right--icon
+        .main-text__right--icon__click
+          クリック
+      .main-text__right--future-bar
 - else
   .all
     .body

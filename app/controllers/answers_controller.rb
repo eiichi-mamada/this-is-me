@@ -31,6 +31,7 @@ class AnswersController < ApplicationController
   end
 
 
+
   private
 
 
