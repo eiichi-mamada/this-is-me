@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for  :users, controllers: {registrations: 'users/registrations'}
   root to: "home#index"
 
-  resources   :restaurants, only: :index
   resources   :comments,    only:[:new, :create, :show, :edit, :update]
   resources   :answers,     only:[:index, :create, :edit, :update]
   resources   :answers do
