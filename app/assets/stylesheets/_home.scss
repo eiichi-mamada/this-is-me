@@ -11,7 +11,8 @@
   .body{
     height: 90vh;
     width:  100vw;
-    background-image: url("/assets/fantasy-4878767_1920.jpg");
+    background-color: red;
+    background-image: url("/assets/hands-544522_1920.jpg");
     background-size: 1440px 90vh ;
     background-repeat:  no-repeat;
     background-position:center center;
@@ -86,17 +87,6 @@
         }
       }
     }
-    &--description-line{
-      border-top: 2px solid red;
-      width: 10000px;
-      height: 150px;
-      background: black;
-      transform: rotateZ(5.9deg);
-      transform-origin: left bottom;
-      position: absolute;
-      left: -30px;
-      bottom: 0;
-    }
   }
   .description{
     height: 110vh;
@@ -128,6 +118,10 @@
       color: #60EEFF;
       transition: 5s;
       position: relative;
+      animation: rotate 30s linear infinite;
+      @keyframes rotate {
+        100% { transform: rotate(360deg); }
+      }
       &__click{
         font-size: 20px;
         position: absolute;
@@ -135,7 +129,11 @@
         bottom: 50%;
         left: 0;
         right: 0;
-        color: red;;
+        color: red;
+        animation: rotate-elm 30s linear infinite;
+      }
+      @keyframes rotate-elm {
+        100% { transform: rotate(-360deg); }
       }
     }
     &--past-bar{
@@ -145,16 +143,10 @@
       height: calc(100vh - 70px);
       background: red;
       width: 100%;
-      border-left: 1px solid #60EEFF;
-      border-right: 1px solid #60EEFF;
       .times{
         position: absolute;
         top: 0;
       }
-    }
-    &--icon:hover{
-      -webkit-transform: rotate(360deg);
-      transform: rotate(360deg);
     }
   }
   &__center{
@@ -168,6 +160,10 @@
       color: #60EEFF;
       transition: 5s;
       position: relative;
+      animation: rotate 30s linear infinite;
+      @keyframes rotate {
+        100% { transform: rotate(360deg); }
+      }
       &__click{
         font-size: 20px;
         position: absolute;
@@ -175,21 +171,24 @@
         bottom: 50%;
         left: 0;
         right: 0;
-        color: red;;
+        color: red;
+        animation: rotate-elm 30s linear infinite;
       }
-    }
-    &--icon:hover{
-      -webkit-transform: rotate(360deg);
-      transform: rotate(360deg);
+      @keyframes rotate-elm {
+        100% { transform: rotate(-360deg); }
+      }
     }
     &--present-bar{
       position: absolute;
-      bottom: calc(-100vh + 150px);
+      top: 0;
+      display: none;
       height: calc(100vh - 70px);
-      background: #60EEFF;
+      background: red;
       width: 100%;
-      border-left: 1px solid #60EEFF;
-      border-right: 1px solid #60EEFF;
+      .times{
+        position: absolute;
+        top: 0;
+      }
     }
   }
   &__right{
@@ -203,6 +202,10 @@
       color: #60EEFF;
       transition: 5s;
       position: relative;
+      animation: rotate 30s linear infinite;
+      @keyframes rotate {
+        100% { transform: rotate(360deg); }
+      }
       &__click{
         font-size: 20px;
         position: absolute;
@@ -210,21 +213,24 @@
         bottom: 50%;
         left: 0;
         right: 0;
-        color: red;;
+        color: red;
+        animation: rotate-elm 30s linear infinite;
       }
-    }
-    &--icon:hover{
-      -webkit-transform: rotate(360deg);
-      transform: rotate(360deg);
+      @keyframes rotate-elm {
+        100% { transform: rotate(-360deg); }
+      }
     }
     &--future-bar{
       position: absolute;
-      bottom: calc(-100vh + 200px);
+      top: 0;
+      display: none;
       height: calc(100vh - 70px);
-      background: #60EEFF;
+      background: red;
       width: 100%;
-      border-left: 1px solid #60EEFF;
-      border-right: 1px solid #60EEFF;
+      .times{
+        position: absolute;
+        top: 0;
+      }
     }
   }
 }

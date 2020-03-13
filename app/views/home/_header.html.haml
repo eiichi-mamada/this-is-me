@@ -30,5 +30,12 @@
         = link_to(root_path, class: "header__center--btn") do
           This is Me
     .header__right
-  = link_to "ログアウト", destroy_user_session_path, method: :delete
-  = link_to "answer_new", past_new_answers_path
+      .header__right--menu
+        %i.fa.fa-bars.header__right--menu__icon
+        .header__right--menu__file
+          .header__right--menu__file--answer.point
+            = link_to "answer", past_new_answers_path, class: "color-red02"
+          .header__right--menu__file--comment.point
+            = link_to "comment", new_comment_path, class: "color-red03"
+          .header__right--menu__file--log-out.point
+            = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "color-red04"
