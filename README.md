@@ -1,4 +1,4 @@
-# this-is-me DB設計
+unko# this-is-me DB設計
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -26,11 +26,13 @@
 |------|----|-------|
 |user|reference|foreign_key:true|
 |question|reference|foreign_key:true|
+|candidates|reference|foreign_key:true|
 |reason|text|null:false|
-|rank|integer|null:false|
+|rank_number|integer|null:false|
 ### Association
 - belongs_to : user
 - belongs_to : question
+- belongs_to : candidates
 
 ## questionsテーブル
 |Column|Type|Options|
@@ -38,7 +40,6 @@
 |content|text|null: false|
 |status|integer|null: false|
 ### Association
-- has_one : answer
 - has_many : candidates
 
 ## candidatesテーブル
