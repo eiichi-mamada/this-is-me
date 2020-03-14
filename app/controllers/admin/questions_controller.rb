@@ -7,10 +7,13 @@ class Admin::QuestionsController < ApplicationController
 
   def new
     @question = Question.new
+    @question.candidates.new
   end
 
   def create
-    Question.create(question_params)
+    @question = Question.new(question_params)
+    # binding.pry
+    @question.save
     redirect_to admin_questions_path
   end
 
@@ -29,7 +32,7 @@ class Admin::QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:content, :status)
+    params.require(:question).permit(:content, :status,  candidates_attributes:[:sub_content, :id])
   end
 
 

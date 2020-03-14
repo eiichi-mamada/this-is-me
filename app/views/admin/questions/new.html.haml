@@ -9,4 +9,7 @@
           %option{value: 0} 過去
           %option{value: 1} 現在
           %option{value: 2} 未来
+      = form.label :sub_content, "sub_content" do
+        = form.fields_for :candidates do |i|
+          = i.text_field :sub_content, placeholder: "候補", class: 'sub_content'
       = form.submit "送信", class: 'send'

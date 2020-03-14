@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   resources :restaurants, only: :index 
   namespace :admin do
-    resources :questions, except: :show
+    resources :questions, except: :show do
+      resources :candidates, only: [:new, :create]
+    end
   end
 end
 
