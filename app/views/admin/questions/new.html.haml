@@ -12,4 +12,7 @@
       = form.label :sub_content, "sub_content" do
         = form.fields_for :candidates do |i|
           = i.text_field :sub_content, placeholder: "候補", class: 'sub_content'
+          -# = i.text_field :sub_content, placeholder: "候補", class: 'sub_content'
+          .more__sub--content
+          -# 複数の候補を保存したい場合はJSで追加する必要がある
       = form.submit "送信", class: 'send'
