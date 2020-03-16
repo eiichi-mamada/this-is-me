@@ -2,14 +2,18 @@ window.addEventListener("load", function(){
   $(function(){
     $('.header__right--menu__icon').hover(function(){
       $('.header__right--menu__file').css('display', 'block')
+      $('.header__right--menu__icon').css('color', '#FF3333')
     },function(){
       $('.header__right--menu__file').css('display', '')
+      $('.header__right--menu__icon').css('color', '')
     });
 
     $('.header__right--menu__file').hover(function(){
       $('.header__right--menu__file').css('display', 'block')
+      $('.header__right--menu__icon').css('color', '#FF3333')
     },function(){
       $('.header__right--menu__file').css('display', '')
+      $('.header__right--menu__icon').css('color', '')
     });
 
     $('.color-red01').hover(function(){
@@ -35,5 +39,11 @@ window.addEventListener("load", function(){
     },function(){
       $('.color-red04').css('color', '')
     });
+
+    $(function() {
+      setTimeout(function() {
+        $(".steam2").css({display: 'inline'});
+        $(".steam2").addClass("move");
+      }, 12000)});
   });
 });
