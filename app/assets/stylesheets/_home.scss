@@ -1,0 +1,236 @@
+@import url(https://fonts.googleapis.com/css?family=Permanent+Marker);
+@import url(https://fonts.googleapis.com/css?family=Montserrat+Subrayada);
+@import url(https://fonts.googleapis.com/css?family=Londrina+Shadow);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700);
+
+
+
+.all{
+  width: 100%;
+  height: 200vh;
+  .body{
+    height: 90vh;
+    width:  100vw;
+    background-color: red;
+    background-image: url("/assets/hands-544522_1920.jpg");
+    background-size: 1440px 90vh ;
+    background-repeat:  no-repeat;
+    background-position:center center;
+    overflow: hidden;
+    position: relative;
+
+    &--top{
+      height: 60px;
+      width:  100%;
+      display: flex;
+      .new01{
+        width: 70%;
+        height: 60px;
+        &--hidden{
+          height: 130px;
+          transform: rotateZ(11deg);
+          transform-origin: right bottom;
+          background: black;
+          border-bottom: 1.5px solid red;
+        }
+      }
+      &__new{
+        height: 60px;
+        width: 33%;
+        right: 0;
+        position: relative;
+        &--btn{
+          position: absolute;
+          top: 0;
+          right: 0;
+          text-align: right;
+          margin:20px 100px 0 0;
+          line-height: 60px;
+          a{
+            text-decoration: none;
+            color: red;
+          }
+        }
+
+      }
+    }
+    &--center{
+      height: 45vh;
+      text-align: center;
+      margin-top: 20px;
+      &__h1{
+        font-size: 200px;
+        font-family: 'Londrina Shadow', cursive;
+        color: yellow;
+      }
+      &__h2{
+        &--comment-text{
+          height: 30px;
+          font-size: 30px;
+          line-height: 30px;
+          font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+        }
+      }
+    }
+    &--bottom{
+      &__log-in{
+        margin: 0 auto;
+        text-align: center;
+        height: 30px;
+        background: green;
+        width: 80px;
+        line-height: 30px;
+        border-radius: 5px;
+        a{
+          text-decoration: none;
+          color: black;
+        }
+      }
+    }
+  }
+  .description{
+    height: 110vh;
+    width: 100%;
+    background: black;
+  }
+}
+.main-padding{
+  width: 100%;
+  height: 70px;
+}
+.main-text{
+  background-image: url('success-4578800_1920');
+  width: 100%;
+  height: calc(100vh - 70px);
+  background-size: 1440px calc(100vh - 70px) ;
+  display: flex;
+  background-color:rgba(255,255,255,0.8);
+  background-blend-mode:lighten;
+  overflow: hidden;
+  &__left{
+    width: 33%;
+    height: calc(100vh - 70px);
+    text-align: center;
+    line-height: calc(100vh - 70px);
+    position: relative;
+    &--icon{
+      font-size: 300px;
+      color: #60EEFF;
+      transition: 5s;
+      position: relative;
+      animation: rotate 30s linear infinite;
+      @keyframes rotate {
+        100% { transform: rotate(360deg); }
+      }
+      &__click{
+        font-size: 20px;
+        position: absolute;
+        top: 50%;
+        bottom: 50%;
+        left: 0;
+        right: 0;
+        color: red;
+        animation: rotate-elm 30s linear infinite;
+      }
+      @keyframes rotate-elm {
+        100% { transform: rotate(-360deg); }
+      }
+    }
+    &--past-bar{
+      position: absolute;
+      top: 0;
+      display: none;
+      height: calc(100vh - 70px);
+      background: red;
+      width: 100%;
+      .times{
+        position: absolute;
+        top: 0;
+      }
+    }
+  }
+  &__center{
+    width: 34%;
+    height: calc(100vh - 70px);
+    text-align: center;
+    line-height: calc(100vh - 70px);
+    position: relative;
+    &--icon{
+      font-size: 300px;
+      color: #60EEFF;
+      transition: 5s;
+      position: relative;
+      animation: rotate 30s linear infinite;
+      @keyframes rotate {
+        100% { transform: rotate(360deg); }
+      }
+      &__click{
+        font-size: 20px;
+        position: absolute;
+        top: 50%;
+        bottom: 50%;
+        left: 0;
+        right: 0;
+        color: red;
+        animation: rotate-elm 30s linear infinite;
+      }
+      @keyframes rotate-elm {
+        100% { transform: rotate(-360deg); }
+      }
+    }
+    &--present-bar{
+      position: absolute;
+      top: 0;
+      display: none;
+      height: calc(100vh - 70px);
+      background: red;
+      width: 100%;
+      .times{
+        position: absolute;
+        top: 0;
+      }
+    }
+  }
+  &__right{
+    width: 33%;
+    height: calc(100vh - 70px);
+    text-align: center;
+    line-height: calc(100vh - 70px);
+    position: relative;
+    &--icon{
+      font-size: 300px;
+      color: #60EEFF;
+      transition: 5s;
+      position: relative;
+      animation: rotate 30s linear infinite;
+      @keyframes rotate {
+        100% { transform: rotate(360deg); }
+      }
+      &__click{
+        font-size: 20px;
+        position: absolute;
+        top: 50%;
+        bottom: 50%;
+        left: 0;
+        right: 0;
+        color: red;
+        animation: rotate-elm 30s linear infinite;
+      }
+      @keyframes rotate-elm {
+        100% { transform: rotate(-360deg); }
+      }
+    }
+    &--future-bar{
+      position: absolute;
+      top: 0;
+      display: none;
+      height: calc(100vh - 70px);
+      background: red;
+      width: 100%;
+      .times{
+        position: absolute;
+        top: 0;
+      }
+    }
+  }
+}

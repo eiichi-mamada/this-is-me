@@ -1,12 +1,47 @@
-%h1.rest トップページ
-- if user_signed_in? && current_user.admin == true
-  %h2 管理者でログインしています
-  = link_to "質問登録", new_admin_question_path
-  = link_to "ログアウト", destroy_user_session_path, method: :delete
-- elsif user_signed_in?
-  %h2 ログインしています
-  = link_to "ログアウト", destroy_user_session_path, method: :delete
+- if user_signed_in?
+  = render 'header'
+  .main-padding
+  .main-text
+    .main-text__left
+      %i.fa.fa-certificate.main-text__left--icon
+        .main-text__left--icon__click
+          クリック
+      .main-text__left--past-bar
+        %i.fa.fa-times.times01
+    .main-text__center
+      %i.fa.fa-certificate.main-text__center--icon
+        .main-text__center--icon__click
+          クリック
+      .main-text__center--present-bar
+        %i.fa.fa-times.times02
+    .main-text__right
+      %i.fa.fa-certificate.main-text__right--icon
+        .main-text__right--icon__click
+          クリック
+      .main-text__right--future-bar
+        %i.fa.fa-times.times03
 - else
-  %h2 ログインしていません
-  = link_to "新規登録", new_user_registration_path
-  = link_to "ログイン", new_user_session_path
+  .all
+    .body
+      .body--top
+        .body--top__new
+        .body--top__new
+        .body--top__new.new01
+          .new01--hidden
+          .body--top__new--btn
+            = link_to "新規登録", new_user_registration_path
+      .body--center
+        .body--center__h1
+          This is Me
+        %ul.body--center__h2
+          %li.body--center__h2--comment-text
+            過去の自分
+          %li.body--center__h2--comment-text
+            未来の目標
+          %li.body--center__h2--comment-text
+            現在やらなくてはいけないこと
+      .body--bottom
+        .body--bottom__log-in
+          = link_to "ログイン", new_user_session_path
+      .body--description-line
+    .description
