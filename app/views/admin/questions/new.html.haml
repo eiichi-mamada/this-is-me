@@ -9,4 +9,12 @@
           %option{value: 0} 過去
           %option{value: 1} 現在
           %option{value: 2} 未来
+      = form.label :feature, "status" do
+        = form.select :feature, {}, {}, {class: "select-status"} do
+          %option{value: 0} A
+          %option{value: 1} B
+          %option{value: 2} C
+          %option{value: 3} D
+          %option{value: 4} E
+          %option{value: 5} F
       = form.submit "送信", class: 'send'
