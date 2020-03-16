@@ -1,8 +1,7 @@
-= render 'home/header'
 .answer-body
-  .answer-body__left
-  .answer-body__center
-    = form_with model: @answer, local: true, class: 'form' do |form|
+  .answer-body__form
+    .answer-body__form__new
+      = form_with model: @answer, local: true, class: 'form' do |form|
       - @questions_past.each do |question|
         = question.content
         .field
@@ -23,6 +22,12 @@
         // question_idを渡すために、非表示のformにquestion.idを初期値として入力させています。
         = form.number_field :question_id, value: question.id, class: "question-hidden"
         = form.submit "送信", class: 'send'
-  .answer-body__right
-    = link_to admin_questions_path do
-      condition
+    .answer-body__form__none
+      .answer-body__form__none__label
+        .steam
+          %img{:src => "https://www.tam-tam.co.jp/tipsnote/sample/uenaka/180119/svg/steam.svg"}/
+        .steam2
+          %img{:src => "https://www.tam-tam.co.jp/tipsnote/sample/uenaka/180119/svg/steam.svg"}/
+
+    -# = link_to admin_questions_path do
+    -#   condition

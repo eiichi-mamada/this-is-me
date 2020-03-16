@@ -1,4 +1,4 @@
-.question {
+.answer-body {
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -10,7 +10,7 @@
   &__form {
     width: 100%;
     display: flex;
-    // position: fixed;
+    position: fixed;
     &__new{
       width: 50%;
       height: 100vh;
@@ -23,7 +23,7 @@
         height: 500px;
         display: flex;
         flex-flow: column;
-        margin: 80px 50px;
+        margin: 20px 50px 0;
         &__status{
           height: 30px;
           font-size: 20px;
