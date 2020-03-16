@@ -12,7 +12,7 @@
     height: 90vh;
     width:  100vw;
     background-color: red;
-    background-image: url("/assets/hands-544522_1920.jpg");
+    background-image: image-url("/hands-544522_1920.jpg");
     background-size: 1440px 90vh ;
     background-repeat:  no-repeat;
     background-position:center center;
@@ -99,7 +99,7 @@
   height: 70px;
 }
 .main-text{
-  background-image: url('success-4578800_1920');
+  background-image: image-url('success-4578800_1920.jpg');
   width: 100%;
   height: calc(100vh - 70px);
   background-size: 1440px calc(100vh - 70px) ;
