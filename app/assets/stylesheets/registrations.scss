@@ -1,14 +1,21 @@
 .main{
-  height:500px;
+  padding:70px;
+  height:800px;
   background-color: lightgrey;
-  h2{
+  
+  h2.title{
     text-align:center;
+    font-size: 40px;
   }
   .sections{
-    width:350px;
-    height:350px;
+    width:400px;
+    height:700px;
     margin:0 auto;
     text-align:center;
     background-color: lightyellow;
+    .field{
+      font-size:22px;
+    }
+
   }
 }
