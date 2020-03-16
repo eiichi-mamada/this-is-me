@@ -1,14 +1,14 @@
 .header{
   height: 70px;
   width: 100%;
-  background: black;
+  background: #A7F1FF;
   display: flex;
   position: fixed;
-  z-index: 59;
+  z-index: 99;
   &__left{
     width: 33%;
     &--btn{
-      color: #eee;
+      color: #FAFAD2;
       font-size: 45px;
       align-items: center;
       margin-left: 20px;
@@ -26,7 +26,7 @@
     font-family: 'Londrina Shadow', cursive;
     a{
       text-decoration: none;
-      color: yellow;
+      color: black;
     }
   }
   &__right{
@@ -41,7 +41,7 @@
         height: 65px;
         line-height: 70px;
         font-size: 23px;
-        color:white;
+        color: #FAFAD2;
         border-radius: 12px;
         text-align: center;
         overflow: hidden;
