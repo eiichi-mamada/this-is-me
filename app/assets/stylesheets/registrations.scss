@@ -1,8 +1,12 @@
 .main{
-  padding:70px;
-  height:800px;
-  background-color: lightgrey;
-  
+  padding-top:70px;
+  background-image: image-url('success-4578800_1920.jpg');
+  width: 100%;
+  height: calc(100vh - 70px);
+  background-size: cover;
+  background-color:rgba(255,255,255,0.8);
+  background-blend-mode:lighten;
+  overflow: hidden;
   h2.title{
     text-align:center;
     font-size: 40px;
@@ -16,6 +20,5 @@
     .field{
       font-size:22px;
     }
-
   }
 }
