@@ -1,0 +1,24 @@
+.main{
+  padding-top:70px;
+  background-image: image-url('success-4578800_1920.jpg');
+  width: 100%;
+  height: calc(100vh - 70px);
+  background-size: cover;
+  background-color:rgba(255,255,255,0.8);
+  background-blend-mode:lighten;
+  overflow: hidden;
+  h2.title{
+    text-align:center;
+    font-size: 40px;
+  }
+  .sections{
+    width:400px;
+    height:700px;
+    margin:0 auto;
+    text-align:center;
+    background-color: lightyellow;
+    .field{
+      font-size:22px;
+    }
+  }
+}
