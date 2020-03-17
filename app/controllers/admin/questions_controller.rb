@@ -33,7 +33,7 @@ class Admin::QuestionsController < ApplicationController
     params.require(:question).permit(:content, :status,
                                      :sub_content1, :sub_content2, :sub_content3,
                                      :sub_content4, :sub_content5, :sub_content6,
-                                     :sub_content7, :sub_content8)
+                                     :sub_content7, :sub_content8, :feature)
   end
   
 end

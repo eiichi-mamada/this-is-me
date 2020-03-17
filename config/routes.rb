@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :questions, except: :show do
       resources :candidates, only: [:new, :create]
     end
+  end
     
   resources   :comments,    only:[:new, :create, :show, :edit, :update]
   resources   :answers,     only:[:index, :create, :edit, :update]
