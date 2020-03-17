@@ -35,8 +35,5 @@ class Admin::QuestionsController < ApplicationController
                                      :sub_content4, :sub_content5, :sub_content6,
                                      :sub_content7, :sub_content8)
   end
-
-
-
-
+  
 end

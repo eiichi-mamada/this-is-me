@@ -1,0 +1,97 @@
+.header{
+  height: 70px;
+  width: 100%;
+  background: #A7F1FF;
+  display: flex;
+  position: fixed;
+  z-index: 99;
+  &__left{
+    width: 33%;
+    &--btn{
+      color: #FAFAD2;
+      font-size: 45px;
+      align-items: center;
+      margin-left: 20px;
+      &__icon{
+        line-height: 70px;
+      }
+    }
+  }
+  &__center{
+    width: 34%;
+    line-height: 70px;
+    text-align: center;
+    font-size: 60px;
+    opacity: 0.3;
+    font-family: 'Londrina Shadow', cursive;
+    a{
+      text-decoration: none;
+      color: black;
+    }
+  }
+  &__right{
+    width: 33%;
+    &--menu{
+      &__icon{
+        font-size: 30px;
+        display: inline-block;
+        // text-decoration: none;
+        width: 50px;
+        margin:2px 2px 0;
+        height: 65px;
+        line-height: 70px;
+        font-size: 23px;
+        color: #FAFAD2;
+        border-radius: 12px;
+        text-align: center;
+        overflow: hidden;
+        font-weight: bold;
+        transition: .3s;
+        position: absolute;
+        right: 0;
+        margin-right: 30px;
+      }
+      &__text{
+        color: red;
+        position: absolute;
+        right: 0;
+        margin-right: 35px;
+        top: 43px;
+        transition: .3s;
+        text-decoration: none;
+      }
+      &__icon i {
+        line-height:50px;
+      }
+      &__icon:hover {
+        -webkit-transform: translateY(-2px);
+        transform: translateY(-2x);
+      }
+      &__file{
+        background-color: #eee;
+        height: 150px;
+        width: 100px;
+        position: absolute;
+        right: 0;
+        top: 52px;
+        margin-right: 40px;
+        filter: drop-shadow(3px 3px 1px rgba(0,0,0,0.6));
+        display: none;
+        border-radius: 3px;
+        .point{
+          margin: 10px auto;
+          text-align: center;
+          transition: .3s;
+          a{
+            text-decoration: none;
+            color: black;
+          }
+        }
+        .point:hover {
+          -webkit-transform: translateY(-2px);
+          transform: translateY(-2x);
+        }
+      }
+    }
+  }
+}

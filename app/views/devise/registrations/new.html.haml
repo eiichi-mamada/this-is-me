@@ -1,36 +1,45 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :name
-    %br/
-    = f.text_field :name
-  .field
-    = f.label :生年月日
-    .field-birth-info
-      != sprintf(f.date_select(:birthday, prefix:'birthday',with_css_classes:'field-input-birth__year', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
-  .field
-    = f.label :性別
-    .field-sexual-info
-      = f.label :男性
-      = f.radio_button :sexual, 0
-      = f.label :女性
-      = f.radio_button :sexual, 1
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+.header
+  .header__left
+    = link_to(root_path, class: "header__left--btn") do
+      %i.fa.fa-coffee.header__left--btn__icon
+  .header__center
+    .header__center__text
+      = link_to(root_path, class: "header__center--btn") do
+        This is Me
+.main
+  %h2.title 新規会員登録
+  .sections
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = render "devise/shared/error_messages", resource: resource
+      .field
+        = f.label :name
+        %br/
+        = f.text_field :name
+      .field
+        = f.label :Birthday
+        .field-birth-info
+          != sprintf(f.date_select(:birthday, prefix:'birthday',with_css_classes:'field-input-birth__year', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
+      .field
+        = f.label :性別
+        .field-sexual-info
+          = f.label :男性
+          = f.radio_button :sexual, 0
+          = f.label :女性
+          = f.radio_button :sexual, 1
+      .field
+        = f.label :email
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email"
+      .field
+        = f.label :password
+        - if @minimum_password_length
+          %em
+            (#{@minimum_password_length} characters minimum)
+        %br/
+        = f.password_field :password, autocomplete: "new-password"
+      .field
+        = f.label :password_confirmation
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "new-password"
+      .actions
+        = f.submit "Sign up"

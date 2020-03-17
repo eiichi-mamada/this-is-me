@@ -1,0 +1,17 @@
+.comments
+  .comments__form
+    .comments__form__new
+      = form_with model: @comment, local: true, class: 'comments__form__new--form' do |form|
+        = form.label :chronological, "chronological" do
+          = form.select :chronological, {}, {}, {class: "select-status"} do
+            %option{value: 0} 過去からの自分
+            %option{value: 1} 未来への自分
+        = form.label :text, "text" do
+          = form.text_area :message, placeholder: "message", class: 'title'
+        = form.submit "送信", class: 'send'
+    .comments__form__none
+      .comments__form__none__label
+        .steam
+          %img{:src => "https://www.tam-tam.co.jp/tipsnote/sample/uenaka/180119/svg/steam.svg"}/
+        .steam2
+          %img{:src => "https://www.tam-tam.co.jp/tipsnote/sample/uenaka/180119/svg/steam.svg"}/
