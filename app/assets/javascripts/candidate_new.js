@@ -2,7 +2,7 @@ $(function(){
 
   function buildFileField(index) {
     var html = `<input placeholder="候補" class="sub_content${index}" type="text"
-                    name="question[sub_content${index}]""
+                    name="question[sub_content${index}]"
                     id="question_sub_content${index}"
                     >
                   <div class="more__sub--content${index}"></div>`;
@@ -11,42 +11,37 @@ $(function(){
 
   var index = 1
   $('.sub_content1').change(function(e) {
-    isChange = true;
     index += 1 
     $('.more__sub--content').append(buildFileField(index));
   });
 
-  $('.sub_content2').change(function(e) {
-    console.log("hello");
-    isChange = true;
-    index += 2
+  $(document).on("change", ".sub_content2", function(){
+    index += 1
     $('.more__sub--content2').append(buildFileField(index));
   });
 
-  $('.sub_content3').change(function(e) {
-    isChange = true;
-    $('.more__sub--content').append(buildFileField);
+  $(document).on("change", ".sub_content3", function(){
+    index += 1
+    $('.more__sub--content3').append(buildFileField(index));
   });
 
-  $('.sub_content4').change(function(e) {
-    isChange = true;
-    $('.more__sub--content').append(buildFileField);
+  $(document).on("change", ".sub_content4", function(){
+    index += 1
+    $('.more__sub--content4').append(buildFileField(index));
   });
 
-  $('.sub_content5').change(function(e) {
-    isChange = true;
-    $('.more__sub--content').append(buildFileField);
+  $(document).on("change", ".sub_content5", function(){
+    index += 1
+    $('.more__sub--content5').append(buildFileField(index));
   });
 
-  $('.sub_content6').change(function(e) {
-    isChange = true;
-    $('.more__sub--content').append(buildFileField);
+  $(document).on("change", ".sub_content6", function(){
+    index += 1
+    $('.more__sub--content6').append(buildFileField(index));
   });
 
-  $('.sub_content7').change(function(e) {
-    isChange = true;
-    $('.more__sub--content').append(buildFileField);
+  $(document).on("change", ".sub_content7", function(){
+    index += 1
+    $('.more__sub--content7').append(buildFileField(index));
   });
-
-  
 });
