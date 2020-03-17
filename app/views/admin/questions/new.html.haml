@@ -9,10 +9,9 @@
           %option{value: 0} 過去
           %option{value: 1} 現在
           %option{value: 2} 未来
-      = form.label :sub_content, "sub_content" do
-        = form.fields_for :candidates do |i|
-          = i.text_field :sub_content, placeholder: "候補", class: 'sub_content'
-          -# = i.text_field :sub_content, placeholder: "候補", class: 'sub_content'
-          .more__sub--content
-          -# 複数の候補を保存したい場合はJSで追加する必要がある
+      = form.label :sub_content1, "sub_content" do
+        = form.text_field :sub_content1, placeholder: "候補", class: 'sub_content1'
+        -# = form.text_field :sub_content, placeholder: "候補", class: 'sub_content2'
+        .more__sub--content
+        -# 複数の候補を保存したい場合はJSで追加する必要がある
       = form.submit "送信", class: 'send'

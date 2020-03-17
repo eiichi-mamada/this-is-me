@@ -10,19 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_12_120429) do
-
-  create_table "candidates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "sub_content", null: false
-    t.bigint "question_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["question_id"], name: "index_candidates_on_question_id"
-  end
+ActiveRecord::Schema.define(version: 2020_03_09_135250) do
 
   create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content", null: false
     t.integer "status", null: false
+    t.string "sub_content1"
+    t.string "sub_content2"
+    t.string "sub_content3"
+    t.string "sub_content4"
+    t.string "sub_content5"
+    t.string "sub_content6"
+    t.string "sub_content7"
+    t.string "sub_content8"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -43,5 +43,4 @@ ActiveRecord::Schema.define(version: 2020_03_12_120429) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "candidates", "questions"
 end

@@ -7,7 +7,6 @@ class Admin::QuestionsController < ApplicationController
 
   def new
     @question = Question.new
-    @question.candidates.new
   end
 
   def create
@@ -32,7 +31,10 @@ class Admin::QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:content, :status,  candidates_attributes:[:sub_content, :id])
+    params.require(:question).permit(:content, :status,
+                                     :sub_content1, :sub_content2, :sub_content3,
+                                     :sub_content4, :sub_content5, :sub_content6,
+                                     :sub_content7)
   end
 
 
