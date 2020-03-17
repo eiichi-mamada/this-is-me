@@ -29,7 +29,7 @@ class Admin::QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:content, :status)
+    params.require(:question).permit(:content, :status, :feature)
   end
 
 
