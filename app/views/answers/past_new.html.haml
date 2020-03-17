@@ -2,26 +2,26 @@
   .answer-body__form
     .answer-body__form__new
       = form_with model: @answer, local: true, class: 'form' do |form|
-      - @questions_past.each do |question|
-        = question.content
-        .field
-          = form.label :レベル
-          .field-sexual-info
-            = form.label "5"
-            = form.radio_button :rank, 5
-            = form.label "4"
-            = form.radio_button :rank, 4
-            = form.label "3"
-            = form.radio_button :rank, 3
-            = form.label "2"
-            = form.radio_button :rank, 2
-            = form.label "1"
-            = form.radio_button :rank, 1
-        = form.label :reason, "reason" do
-          = form.text_area :reason, placeholder: "reason", class: 'title'
-        // question_idを渡すために、非表示のformにquestion.idを初期値として入力させています。
-        = form.number_field :question_id, value: question.id, class: "question-hidden"
-        = form.submit "送信", class: 'send'
+        - @questions_past.each do |question|
+          = question.content
+          .field
+            = form.label :レベル
+            .field-sexual-info
+              = form.label "5"
+              = form.radio_button :rank, 5
+              = form.label "4"
+              = form.radio_button :rank, 4
+              = form.label "3"
+              = form.radio_button :rank, 3
+              = form.label "2"
+              = form.radio_button :rank, 2
+              = form.label "1"
+              = form.radio_button :rank, 1
+            = form.label :reason, "reason" do
+              = form.text_area :reason, placeholder: "reason", class: 'title'
+          // question_idを渡すために、非表示のformにquestion.idを初期値として入力させています。
+          = form.number_field :question_id, value: question.id, class: "question-hidden"
+          = form.submit "送信", class: 'send'
     .answer-body__form__none
       .answer-body__form__none__label
         .steam
