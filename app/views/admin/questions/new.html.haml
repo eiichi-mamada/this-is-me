@@ -11,17 +11,12 @@
           %option{value: 1} 現在
           %option{value: 2} 未来
         = form.select :feature, {}, {}, {class: "select-status"} do
-          %option{value: 0} A
-          %option{value: 1} B
-          %option{value: 2} C
-          %option{value: 3} D
-          %option{value: 4} E
-          %option{value: 5} F
-      = form.label :sub_content1, "sub_content" do
-        = form.text_field :sub_content1, placeholder: "候補", class: 'sub_content1'
-        -# = form.text_field :sub_content, placeholder: "候補", class: 'sub_content2'
-        .more__sub--content
-        -# 複数の候補を保存したい場合はJSで追加する必要がある
+          %option{value: 0} 主体性
+          %option{value: 1} 実行力
+          %option{value: 2} 創造力
+          %option{value: 3} 計画力
+          %option{value: 4} コミュニケーション力
+          %option{value: 5} ストレスコントロール力
       = form.submit "送信", class: 'send'
 
 

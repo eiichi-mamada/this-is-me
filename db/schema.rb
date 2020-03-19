@@ -35,14 +35,6 @@ ActiveRecord::Schema.define(version: 2020_03_16_095613) do
   create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content", null: false
     t.integer "status", null: false
-    t.string "sub_content1"
-    t.string "sub_content2"
-    t.string "sub_content3"
-    t.string "sub_content4"
-    t.string "sub_content5"
-    t.string "sub_content6"
-    t.string "sub_content7"
-    t.string "sub_content8"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "feature", null: false
