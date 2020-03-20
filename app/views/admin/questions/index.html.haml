@@ -1,12 +1,13 @@
-question_index
-%p
-- @questions.each do |question|
-  |
-  質問：
-  = question.content
-  ステータス：
-  = question.status
-  フィーチャー：
-  = question.feature
-  |
+.question_index
+  question_index
   %p
+  - @questions.each do |question|
+    |
+    質問：
+    = question.content
+    ステータス：
+    = question.status
+    フィーチャー：
+    = question.feature
+    |
+    %p
