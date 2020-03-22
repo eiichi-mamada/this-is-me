@@ -10,7 +10,8 @@ class Admin::QuestionsController < ApplicationController
   end
 
   def create
-    Question.create(question_params)
+    @question = Question.new(question_params)
+    @question.save
     redirect_to admin_questions_path
   end
 
@@ -31,8 +32,5 @@ class Admin::QuestionsController < ApplicationController
   def question_params
     params.require(:question).permit(:content, :status, :feature)
   end
-
-
-
-
+  
 end
