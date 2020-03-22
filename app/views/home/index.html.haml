@@ -8,21 +8,21 @@
       .main-text__left--past-bar
         %i.fa.fa-times.times01
 
-          // チャート用の数値取得ここから（モデルに記述移します）
-          #status
+          -# // チャート用の数値取得ここから（モデルに記述移します）
+          -# #status
 
-          - @kako = Question.where(status: 0)
-          - @kako_a = @kako.where(feature: 0)
+          -# - @kako = Question.where(status: 0)
+          -# - @kako_a = @kako.where(feature: 0)
           
-          - i = 0
-          - @kako_a.each do |kako_a|
+          -# - i = 0
+          -# - @kako_a.each do |kako_a|
 
-            - i += kako_a.answer.rank
+          -#   - i += kako_a.answer.rank
 
-          過去かつ属性Aのランクを全て足すと・・・
-          %br
-          = i
-          // ここまで
+          -# 過去かつ属性Aのランクを全て足すと・・・
+          -# %br
+          -# = i
+          -# // ここまで
 
     .main-text__center
       %i.fa.fa-certificate.main-text__center--icon
