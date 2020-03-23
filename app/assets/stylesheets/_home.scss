@@ -107,11 +107,15 @@
   background-color:rgba(255,255,255,0.8);
   background-blend-mode:lighten;
   overflow: hidden;
+  position: relative;
   &__left{
     width: 33%;
     height: calc(100vh - 70px);
     text-align: center;
-    line-height: calc(100vh - 70px);
+    // line-height: calc(100vh - 70px);
+    position: absolute;
+    top: 25%;
+    left: 0%;
     position: relative;
     &--icon{
       font-size: 300px;
@@ -140,9 +144,13 @@
       position: absolute;
       top: 0;
       display: none;
-      height: calc(100vh - 70px);
-      background: red;
       width: 100%;
+      height: calc(100vh - 70px);
+      background: white;
+      opacity: 0.9;
+      padding: 25% 0;
+      position: absolute;
+      top: -25%;
       .times01{
         position: absolute;
         top: 0;
