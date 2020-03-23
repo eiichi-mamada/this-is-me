@@ -16,7 +16,8 @@
       height: 100vh;
       text-align: center;
       display: flex;
-      &--form{
+      
+      .form{
         background: rgba(238, 238, 238, 0.6);
         border-radius: 10px;
         width: 100%;
@@ -24,9 +25,21 @@
         display: flex;
         flex-flow: column;
         margin: 80px 50px;
-        &__status{
+        .content {
+          // padding-left: 100px;
+          padding-right: 300px;
+          padding-bottom: 60px;
+          margin-top: 40px;
+        }
+        .select-status{
           height: 30px;
           font-size: 20px;
+          // display: none;
+          margin-top: 5px;
+        }
+        .send {
+          margin-top: 5px;
+          
         }
       }
     }
@@ -118,7 +131,6 @@
         opacity: 0;
     }
 }
-
 .question_index {
   padding-top: 50px;
 }
