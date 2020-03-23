@@ -4,7 +4,7 @@
     .main-text__left
       %i.fa.fa-certificate.main-text__left--icon
         .main-text__left--icon__click
-          クリック
+          = link_to "過去を分析する", past_new_answers_path
       .main-text__left--past-bar
         %i.fa.fa-times.times01
 
@@ -39,13 +39,13 @@
     .main-text__center
       %i.fa.fa-certificate.main-text__center--icon
         .main-text__center--icon__click
-          クリック
+          = link_to "現在を分析する", now_new_answers_path
       .main-text__center--present-bar
         %i.fa.fa-times.times02
     .main-text__right
       %i.fa.fa-certificate.main-text__right--icon
         .main-text__right--icon__click
-          クリック
+          = link_to "未来を分析する", future_new_answers_path
       .main-text__right--future-bar
         %i.fa.fa-times.times03
 - else
