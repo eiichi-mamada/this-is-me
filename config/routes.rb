@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   end
     
   resources   :comments,    only:[:new, :create, :show, :edit, :update]
-  resources   :answers,     only:[:index, :create, :edit, :update]
   resources   :answers do
     collection do
       get 'past_new'
