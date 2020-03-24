@@ -6,7 +6,8 @@ class AnswersController < ApplicationController
   end
 
   def past_new
-    @answer           = Answer.new
+    @form = Form::AnswerCollection.new
+    # @answer = Answer.new
     @questions_past   = Question.where(status: 0)
   end
 
@@ -21,7 +22,7 @@ class AnswersController < ApplicationController
   end
 
   def create
-    Answer.create(answer_params)
+    Answer.create(answer_collection_params)
     redirect_to root_path
   end
 
@@ -31,14 +32,17 @@ class AnswersController < ApplicationController
   def update
   end
 
-
-
   private
 
+  # def answer_params
+  #   params.require(:answer).permit(:reason, :rank, :question_id).merge(user_id: current_user.id)
+  # end
 
-  def answer_params
-    params.require(:answer).permit(:reason, :rank, :question_id).merge(user_id: current_user.id)
-  end
-
+  # def answer_collection_params
+  #   params
+  #     .require(:answer_collection)
+  #     .permit(answers_attributes: Form::Ansewer::REGISTRABLE_ATTRIBUTES)
+  #     # .merge(user_id: current_user.id)
+  # end
 
 end
