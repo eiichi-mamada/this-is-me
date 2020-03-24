@@ -2,12 +2,16 @@ class AnswersController < ApplicationController
 
   def index
     @answers = Answer.all
-    
   end
 
   def past_new
-    @answer           = Answer.new
-    @questions_past   = Question.where(status: 0)
+    @past_questions = Question.where(status: 0)
+
+    @answers = []
+    @past_questions.each do |question|
+      @answers << Answer.new(question_id: question[:id])
+    end
+
   end
 
   def now_new
