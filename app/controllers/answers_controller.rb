@@ -5,13 +5,12 @@ class AnswersController < ApplicationController
   end
 
   def past_new
-    @past_questions = Question.where(status: 0)
+    @questions = Question.where(status: 0)
+    @answers = AnswerCollection.new
 
-    # @answer_collection = Answer.new(question_id: @past_questions[:id])
-    
-    @past_questions.each do |question|
-      @answers << Answer.new(question_id: question[:id])
-    end
+    # @past_questions.each do |question|
+    #   @answers << Answer.new(question_id: question[:id])
+    # end
 
   end
 
@@ -26,9 +25,12 @@ class AnswersController < ApplicationController
   end
 
   def create
-    binding.pry
-    Answer.create(answer_params)
-    redirect_to root_path
+    @answers = AnswerCollection.new(answers_params)
+    if @answers.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -41,10 +43,13 @@ class AnswersController < ApplicationController
 
   private
 
-
-  def answer_params
-    params.require(:answer).permit(:reason, :rank, :question_id).merge(user_id: current_user.id)
+  def answers_params
+    params.require(:answers)
   end
+
+  # def answer_params
+  #   params.require(:answer).permit(:reason, :rank, :question_id).merge(user_id: current_user.id)
+  # end
 
 
 end

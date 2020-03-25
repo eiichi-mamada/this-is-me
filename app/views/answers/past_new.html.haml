@@ -1,31 +1,51 @@
 .answer-body
   .answer-body__form
     .answer-body__form__new
-      = form_with model: @answers, url: answers_path, local: true, class: 'form' do |form|
-        - @past_questions.each do |question|
-          Q.
-          = question.id
-          = question.content
-          = form.fields_for "answer[]", {} do |f|
-            .field
-              = f.label :レベル
-              = f.select :rank, {}, {}, {class: "select-status"} do
-                %option{value: 0} 0
-                %option{value: 1} 1
-                %option{value: 2} 2
-                %option{value: 3} 3
-                %option{value: 4} 4
-                %option{value: 5} 5
-              %br
-              = f.label :reason, "reason" do
-                = f.text_area :reason, placeholder: "reason", class: 'title'
+      = form_with model: @answers, url: answers_path, local: true do |form|
+        - @answers.collection.each do |answer|
+          = fields_for 'answers[]', answer do |f|
+            = f.label :レベル
+            = f.select :rank, {}, {}, {class: "select-status"} do
+              %option{value: 0} 0
+              %option{value: 1} 1
+              %option{value: 2} 2
+              %option{value: 3} 3
+              %option{value: 4} 4
+              %option{value: 5} 5 
+            %br
+            = f.label :reason, "reason" do
+              = f.text_area :reason, placeholder: "reason", class: 'title'
+            %br
+            // question_idを渡すために、非表示のformにquestion.idを初期値として入力させています。
+            -# = f.number_field :question_id, value: answer.id, class: "question-hidden"
         = form.submit "送信", class: 'send'
-    .answer-body__form__none
-      .answer-body__form__none__label
-        .steam
-          %img{:src => "https://www.tam-tam.co.jp/tipsnote/sample/uenaka/180119/svg/steam.svg"}/
-        .steam2
-          %img{:src => "https://www.tam-tam.co.jp/tipsnote/sample/uenaka/180119/svg/steam.svg"}/
 
+
+
+    -#   = form_with model: @answers, url: answers_path, local: true, class: 'form' do |form|
+    -#     - @past_questions.each do |question|
+    -#       Q.
+    -#       = question.id
+    -#       = question.content
+    -#       = form.fields_for "answer[]", {} do |f|
+    -#         .field
+    -#           = f.label :レベル
+    -#           = f.select :rank, {}, {}, {class: "select-status"} do
+    -#             %option{value: 0} 0
+    -#             %option{value: 1} 1
+    -#             %option{value: 2} 2
+    -#             %option{value: 3} 3
+    -#             %option{value: 4} 4
+    -#             %option{value: 5} 5
+    -#           %br
+    -#           = f.label :reason, "reason" do
+    -#             = f.text_area :reason, placeholder: "reason", class: 'title'
+    -#     = form.submit "送信", class: 'send'
+    -# .answer-body__form__none
+    -#   .answer-body__form__none__label
+    -#     .steam
+    -#       %img{:src => "https://www.tam-tam.co.jp/tipsnote/sample/uenaka/180119/svg/steam.svg"}/
+    -#     .steam2
+    -#       %img{:src => "https://www.tam-tam.co.jp/tipsnote/sample/uenaka/180119/svg/steam.svg"}/
     -# = link_to admin_questions_path do
     -#   condition
