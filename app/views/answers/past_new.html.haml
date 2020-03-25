@@ -1,12 +1,12 @@
 .answer-body
   .answer-body__form
     .answer-body__form__new
-      = form_with model: @answer, local: true, class: 'form' do |form|
+      = form_with model: @answers, url: answers_path, local: true, class: 'form' do |form|
         - @past_questions.each do |question|
           Q.
           = question.id
           = question.content
-          = form.fields_for @answers, {} do |f|
+          = form.fields_for "answer[]", {} do |f|
             .field
               = f.label :レベル
               = f.select :rank, {}, {}, {class: "select-status"} do

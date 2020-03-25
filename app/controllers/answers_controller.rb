@@ -7,7 +7,8 @@ class AnswersController < ApplicationController
   def past_new
     @past_questions = Question.where(status: 0)
 
-    @answers = []
+    # @answer_collection = Answer.new(question_id: @past_questions[:id])
+    
     @past_questions.each do |question|
       @answers << Answer.new(question_id: question[:id])
     end
@@ -25,6 +26,7 @@ class AnswersController < ApplicationController
   end
 
   def create
+    binding.pry
     Answer.create(answer_params)
     redirect_to root_path
   end
