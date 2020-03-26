@@ -20,9 +20,9 @@ class AnswersController < ApplicationController
   end
 
   def create
-    results = []
+
     answers_params.each do |answer|
-      results = Answer.create(answer)
+      Answer.create(answer)
     end
     redirect_to root_path
 
