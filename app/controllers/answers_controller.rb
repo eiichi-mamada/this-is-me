@@ -6,7 +6,7 @@ class AnswersController < ApplicationController
 
   def past_new
     @questions = Question.where(status: 0)
-    @answers = AnswerCollection.new
+    @answers = AnswerCollection.new(value: 0)
   end
 
   def now_new

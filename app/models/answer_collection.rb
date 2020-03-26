@@ -5,12 +5,12 @@ class AnswerCollection
   include ActiveModel::AttributeMethods
   include ActiveModel::Validations
 
-  @@questions = Question.where(status: 0)  #クラス変数を用いて過去のquestionを渡す
+  # @@questions = Question.where(status: 0)  #クラス変数を用いて過去のquestionを渡す
 
   attr_accessor :collection  # ここに作成したanserモデルが格納される
 
   # 初期化メソッド
-  def initialize(attributes = [])
+  def initialize(attributes = [], status)
     if attributes.present?
       self.collection = attributes.map do |value|
         Answer.new(
@@ -22,7 +22,8 @@ class AnswerCollection
       end
     else
       self.collection = []
-      @@questions.each do |question|
+      questions = Question.where(status: status[:value])
+      questions.each do |question|
         self.collection << Answer.new(question_id: question[:id])
       end
     end
