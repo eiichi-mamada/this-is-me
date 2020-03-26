@@ -5,7 +5,7 @@ class AnswerCollection
   include ActiveModel::AttributeMethods
   include ActiveModel::Validations
 
-  @@questions = Question.where(status: 0)  #クラス変数を用いてquestionを渡す
+  @@questions = Question.where(status: 0)  #クラス変数を用いて過去のquestionを渡す
 
   attr_accessor :collection  # ここに作成したanserモデルが格納される
 
