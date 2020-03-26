@@ -11,29 +11,30 @@
         / チャートに関する記述ここから
         #status-wrapper
           - pInde = 0 & pExec = 0 & pCrea = 0 & pPlan = 0 & pTeam = 0 & pComm = 0
-          - @past_independence.zip(@past_execution, @past_creativity, @past_planning, @past_teamwork, @past_communication).each do | past_independence, past_execution, past_creativity, past_planning, past_teamwork, past_communication |
-            - pInde += past_independence.answer.rank
-            - pExec += past_execution.answer.rank
-            - pCrea += past_creativity.answer.rank
-            - pPlan += past_planning.answer.rank
-            - pTeam += past_teamwork.answer.rank
-            - pComm += past_communication.answer.rank
-          #status-past-independence{data: {past_inde: pInde}}
-            = "過去『主体性』累計: #{pInde}ポイント" 
-          #status-past-execution{data: {past_exec: pExec}}
-            = "過去『実行力』累計: #{pExec}ポイント"
-          #status-past-creativity{data: {past_crea: pCrea}}
-            = "過去『創造力』累計: #{pCrea}ポイント"
-          #status-past-planning{data: {past_plan: pPlan}}
-            = "過去『計画力』累計: #{pPlan}ポイント"
-          #status-past-teamwork{data: {past_team: pTeam}}
-            = "過去『チームワーク』累計: #{pTeam}ポイント"
-          #status-past-communication{data: {past_comm: pComm}}
-            = "過去『コミュニケーション』累計: #{pComm}ポイント"
-          / チャート描画
-          %canvas#myChart{height: "400",  width: "400"}
-          = link_to "診断結果の詳細を見る", "#"
-        / ここまで
+          - if @past_independent.present?
+            - @past_independence.zip(@past_execution, @past_creativity, @past_planning, @past_teamwork, @past_communication).each do | past_independence, past_execution, past_creativity, past_planning, past_teamwork, past_communication |
+              - pInde += past_independence.answer.rank
+              - pExec += past_execution.answer.rank
+              - pCrea += past_creativity.answer.rank
+              - pPlan += past_planning.answer.rank
+              - pTeam += past_teamwork.answer.rank
+              - pComm += past_communication.answer.rank
+            #status-past-independence{data: {past_inde: pInde}}
+              = "過去『主体性』累計: #{pInde}ポイント" 
+            #status-past-execution{data: {past_exec: pExec}}
+              = "過去『実行力』累計: #{pExec}ポイント"
+            #status-past-creativity{data: {past_crea: pCrea}}
+              = "過去『創造力』累計: #{pCrea}ポイント"
+            #status-past-planning{data: {past_plan: pPlan}}
+              = "過去『計画力』累計: #{pPlan}ポイント"
+            #status-past-teamwork{data: {past_team: pTeam}}
+              = "過去『チームワーク』累計: #{pTeam}ポイント"
+            #status-past-communication{data: {past_comm: pComm}}
+              = "過去『コミュニケーション』累計: #{pComm}ポイント"
+            / チャート描画
+            %canvas#myChart{height: "400",  width: "400"}
+            = link_to "診断結果の詳細を見る", "#"
+          / ここまで
       
     .main-text__center
       %i.fa.fa-certificate.main-text__center--icon
