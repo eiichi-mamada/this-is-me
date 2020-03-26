@@ -4,8 +4,8 @@ class AnswerCollection
   extend ActiveModel::Translation
   include ActiveModel::AttributeMethods
   include ActiveModel::Validations
-  ANSWER_NUM = Question.count  # 同時に作成する数
 
+  @@questions = Question.where(status: 0)  #クラス変数を用いてquestionを渡す
 
   attr_accessor :collection  # ここに作成したanserモデルが格納される
 
@@ -14,14 +14,17 @@ class AnswerCollection
     if attributes.present?
       self.collection = attributes.map do |value|
         Answer.new(
-          # user_id: value['user_id'],
-          # question_id: value['question_id'],
-          # reason: value['reason'],
-          # rank: value['rank']
+          user_id: value['user_id'],
+          question_id: value['question_id'],
+          reason: value['reason'],
+          rank: value['rank']
         )
       end
     else
-      self.collection = ANSWER_NUM.times.map do { Answer.new }
+      self.collection = []
+      @@questions.each do |question|
+        self.collection << Answer.new(question_id: question[:id])
+      end
     end
   end
 
@@ -30,21 +33,21 @@ class AnswerCollection
     false
   end
 
-  # コレクションをDBに保存するメソッド
-  def save
-    is_success = true
-    ActiveRecord::Base.transaction do
-      collection.each do |result|
-        # バリデーションを全てかけたいからsave!ではなくsaveを使用
-        is_success = false unless result.save
-      end
-      # バリデーションエラーがあった時は例外を発生させてロールバックさせる
-      raise ActiveRecord::RecordInvalid unless is_success
-    end
-    rescue
-      p 'エラー'
-    ensure
-      return is_success
-  end
+  # # コレクションをDBに保存するメソッド
+  # def save
+  #   is_success = true
+  #   ActiveRecord::Base.transaction do
+  #     collection.each do |result|
+  #       # バリデーションを全てかけたいからsave!ではなくsaveを使用
+  #       is_success = false unless result.save
+  #     end
+  #     # バリデーションエラーがあった時は例外を発生させてロールバックさせる
+  #     raise ActiveRecord::RecordInvalid unless is_success
+  #   end
+  #   rescue
+  #     p 'エラー'
+  #   ensure
+  #     return is_success
+  # end
 
 end

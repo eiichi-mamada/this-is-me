@@ -3,6 +3,10 @@
     .answer-body__form__new
       = form_with model: @answers, url: answers_path, local: true do |form|
         - @answers.collection.each do |answer|
+          Q.
+          = answer.question_id
+          = @questions.find(answer.question_id).content
+          %br
           = fields_for 'answers[]', answer do |f|
             = f.label :レベル
             = f.select :rank, {}, {}, {class: "select-status"} do
@@ -16,8 +20,9 @@
             = f.label :reason, "reason" do
               = f.text_area :reason, placeholder: "reason", class: 'title'
             %br
-            // question_idを渡すために、非表示のformにquestion.idを初期値として入力させています。
-            -# = f.number_field :question_id, value: answer.id, class: "question-hidden"
+            //question_idを渡すために、非表示のformにquestion.idを初期値として入力させています。
+            = f.number_field :question_id, value: answer.question_id, class: "question-hidden"
+            %br
         = form.submit "送信", class: 'send'
 
 

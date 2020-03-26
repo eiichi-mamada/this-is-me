@@ -25,12 +25,19 @@ class AnswersController < ApplicationController
   end
 
   def create
-    @answers = AnswerCollection.new(answers_params)
-    if @answers.save
-      redirect_to root_path
-    else
-      render :new
+    answers_params.each do |answer|
+      Answer.create(answer)
     end
+    
+    redirect_to root_path
+    
+    # @answers = AnswerCollection.new(answers_params)
+    # binding.pry
+    # if @answers.save
+    #   redirect_to root_path
+    # else
+    #   render :new
+    # end
   end
 
   def edit
@@ -44,12 +51,11 @@ class AnswersController < ApplicationController
   private
 
   def answers_params
-    params.require(:answers)
+    answers = []
+    params.require(:answers).each do |param|
+      answers << param.permit(:reason, :rank, :question_id).merge(user_id: current_user.id)
+    end
+    return answers  
   end
-
-  # def answer_params
-  #   params.require(:answer).permit(:reason, :rank, :question_id).merge(user_id: current_user.id)
-  # end
-
 
 end
