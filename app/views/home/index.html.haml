@@ -11,8 +11,8 @@
         / チャートに関する記述ここから
         #status-wrapper
           - pInde = 0 & pExec = 0 & pCrea = 0 & pPlan = 0 & pTeam = 0 & pComm = 0
-          - if @past_independent.present?
-            - @past_independence.zip(@past_execution, @past_creativity, @past_planning, @past_teamwork, @past_communication).each do | past_independence, past_execution, past_creativity, past_planning, past_teamwork, past_communication |
+          - @past_independence.zip(@past_execution, @past_creativity, @past_planning, @past_teamwork, @past_communication).each do | past_independence, past_execution, past_creativity, past_planning, past_teamwork, past_communication |
+            - if @answer.present?
               - pInde += past_independence.answer.rank
               - pExec += past_execution.answer.rank
               - pCrea += past_creativity.answer.rank
