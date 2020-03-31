@@ -114,7 +114,7 @@
     text-align: center;
     // line-height: calc(100vh - 70px);
     position: absolute;
-    top: 25%;
+    top: 100px;
     left: 0%;
     position: relative;
     &--icon{
@@ -141,6 +141,7 @@
       }
     }
     &--past-bar{
+      margin-top: -20px;
       position: absolute;
       top: 0;
       display: none;
@@ -164,7 +165,10 @@
     width: 34%;
     height: calc(100vh - 70px);
     text-align: center;
-    line-height: calc(100vh - 70px);
+    // line-height: calc(100vh - 70px);
+    position: absolute;
+    top: 100px;	
+    left: 0%;
     position: relative;
     &--icon{
       font-size: 300px;
@@ -190,11 +194,14 @@
       }
     }
     &--present-bar{
+      margin-top: -100px;
+      padding-top: 10px;
       position: absolute;
       top: 0;
       display: none;
       height: calc(100vh - 70px);
-      background: red;
+      background: white;
+      opacity: 0.9;
       width: 100%;
       .times02{
         position: absolute;
@@ -206,10 +213,11 @@
     }
   }
   &__right{
+    margin-top: 100px;
     width: 33%;
     height: calc(100vh - 70px);
     text-align: center;
-    line-height: calc(100vh - 70px);
+    // line-height: calc(100vh - 70px);
     position: relative;
     &--icon{
       font-size: 300px;
@@ -235,11 +243,14 @@
       }
     }
     &--future-bar{
+      margin-top: -100px;
+      padding-top: 10px;
       position: absolute;
       top: 0;
       display: none;
       height: calc(100vh - 70px);
-      background: red;
+      background: white;
+      opacity: 0.9;
       width: 100%;
       .times03{
         position: absolute;

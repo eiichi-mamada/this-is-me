@@ -40,6 +40,18 @@ window.addEventListener("load", function(){
       $('.color-red04').css('color', '')
     });
 
+    $('.color-red05').hover(function(){
+      $('.color-red05').css('color', 'red')
+    },function(){
+      $('.color-red05').css('color', '')
+    });
+
+    $('.color-red06').hover(function(){
+      $('.color-red06').css('color', 'red')
+    },function(){
+      $('.color-red06').css('color', '')
+    });
+
     $(function() {
       setTimeout(function() {
         $(".steam2").css({display: 'inline'});
