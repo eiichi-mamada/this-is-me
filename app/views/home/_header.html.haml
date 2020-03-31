@@ -14,11 +14,15 @@
           .header__right--menu__file--main-user.point
             = link_to "質問登録", new_admin_question_path, class: "color-red01"
           .header__right--menu__file--answer.point
-            = link_to "answer", past_new_answers_path, class: "color-red02"
+            = link_to "answer（過去）", past_new_answers_path, class: "color-red02"
+          .header__right--menu__file--answer.point
+            = link_to "answer（現在）", now_new_answers_path, class: "color-red03"
+          .header__right--menu__file--answer.point
+            = link_to "answer（未来）", future_new_answers_path, class: "color-red04"
           .header__right--menu__file--comment.point
-            = link_to "comment", new_comment_path, class: "color-red03"
+            = link_to "comment", new_comment_path, class: "color-red05"
           .header__right--menu__file--log-out.point
-            = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "color-red04"
+            = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "color-red06"
 
 - else
   .header
@@ -34,7 +38,11 @@
         %i.fa.fa-bars.header__right--menu__icon
         .header__right--menu__file
           .header__right--menu__file--answer.point
-            = link_to "answer", past_new_answers_path, class: "color-red02"
+            = link_to "answer（過去）", past_new_answers_path, class: "color-red02"
+          .header__right--menu__file--answer.point
+            = link_to "answer（現在）", now_new_answers_path, class: "color-red02"
+          .header__right--menu__file--answer.point
+            = link_to "answer（未来）", future_new_answers_path, class: "color-red02"
           .header__right--menu__file--comment.point
             = link_to "comment", new_comment_path, class: "color-red03"
           .header__right--menu__file--log-out.point
