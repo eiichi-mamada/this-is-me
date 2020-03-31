@@ -8,7 +8,7 @@
           = @questions.find(answer.question_id).content
           %br
           = fields_for 'answers[]', answer do |f|
-            = f.label :レベル
+            = f.label :"自己評価(0~5)"
             = f.select :rank, {}, {}, {class: "select-status"} do
               %option{value: 0} 0
               %option{value: 1} 1
@@ -26,9 +26,9 @@
         = form.submit "送信", class: 'send'
     .answer-body__form__none
       .answer-body__form__none__label
-        .steam
-          %img{:src => "https://www.tam-tam.co.jp/tipsnote/sample/uenaka/180119/svg/steam.svg"}/
-        .steam2
-          %img{:src => "https://www.tam-tam.co.jp/tipsnote/sample/uenaka/180119/svg/steam.svg"}/
+        -# .steam
+        -#   %img{:src => "https://www.tam-tam.co.jp/tipsnote/sample/uenaka/180119/svg/steam.svg"}/
+        -# .steam2
+        -#   %img{:src => "https://www.tam-tam.co.jp/tipsnote/sample/uenaka/180119/svg/steam.svg"}/
     -# = link_to admin_questions_path do
     -#   condition

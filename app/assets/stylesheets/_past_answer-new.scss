@@ -1,7 +1,7 @@
 .answer-body {
   width: 100%;
   position: relative;
-  overflow: hidden;
+  overflow: scroll;
   background-image: image-url("/assets/coffee-690054_1920.jpg");
   height: calc(100vh - 70px);
   padding-top: 70px;
@@ -10,11 +10,16 @@
   &__form {
     width: 100%;
     display: flex;
-    position: fixed;
+    padding-bottom: 100px;
+    // position: fixed;
     &__new{
-      width: 50%;
-      height: 100vh;
-      text-align: center;
+      background-color: white;
+      width: 600px;
+      // height: 100vh;
+      // text-align: center;
+      padding-left: 50px;
+      margin-left: 50px;
+      padding-top: 30px;
       display: flex;
       &--form{
         background: rgba(238, 238, 238, 0.6);
@@ -41,6 +46,19 @@
       }
     }
   }
+}
+
+.select-status{
+  height: 28px;
+}
+
+.title{
+  width: 550px;
+  height: 80px;
+}
+
+.question-hidden{
+  display: none;
 }
 
 .steam {
