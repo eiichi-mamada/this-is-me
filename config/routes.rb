@@ -15,6 +15,9 @@ Rails.application.routes.draw do
       get 'past_new'
       get 'now_new'
       get 'future_new'
+      get 'past_index'
+      get 'now_index'
+      get 'future_index'
     end
   end
 end

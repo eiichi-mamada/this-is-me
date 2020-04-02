@@ -39,7 +39,7 @@
             = "過去『コミュニケーション』累計: #{pComm}ポイント"
           / チャート描画
           %canvas#pChart{height: "400",  width: "400"}
-          = link_to "診断結果の詳細を見る", "#"
+          = link_to "診断結果の詳細を見る", past_index_answers_path
           / ここまで
       
     .main-text__center
@@ -79,7 +79,7 @@
             = "現在『コミュニケーション』累計: #{nComm}ポイント"
           / チャート描画
           %canvas#nChart{height: "400",  width: "400"}
-          = link_to "診断結果の詳細を見る", "#"
+          = link_to "診断結果の詳細を見る", now_index_answers_path
           / ここまで
     .main-text__right
       %i.fa.fa-certificate.main-text__right--icon
@@ -118,7 +118,7 @@
             = "未来『コミュニケーション』累計: #{fComm}ポイント"
           / チャート描画
           %canvas#fChart{height: "400",  width: "400"}
-          = link_to "診断結果の詳細を見る", "#"
+          = link_to "診断結果の詳細を見る", future_index_answers_path
           / ここまで
 - else
   .all

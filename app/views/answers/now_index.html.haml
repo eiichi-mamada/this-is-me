@@ -1,0 +1,11 @@
+.answer-body
+  -@questions.each do |question|
+    %p.content
+      Q.
+      =question.content
+      %p.rank
+        ランク
+        =question.answer.rank
+        %p.rank
+          理由
+          =question.answer.reason
