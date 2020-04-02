@@ -4,7 +4,10 @@
     .main-text__left
       %i.fa.fa-certificate.main-text__left--icon
         .main-text__left--icon__click
-          = link_to "過去を分析する", past_new_answers_path
+          - if @past_total_rank == [0, 0, 0, 0, 0, 0]
+            = link_to "過去を分析する", past_new_answers_path
+          - else
+            過去の分析結果を表示する
       .main-text__left--past-bar
         %i.fa.fa-times.times01
         / チャートに関する記述ここから
@@ -36,7 +39,10 @@
     .main-text__center
       %i.fa.fa-certificate.main-text__center--icon
         .main-text__center--icon__click
-          = link_to "現在を分析する", now_new_answers_path
+          - if @now_total_rank == [0, 0, 0, 0, 0, 0]
+            = link_to "現在を分析する", now_new_answers_path
+          - else
+            現在の分析結果を表示する
       .main-text__center--present-bar
         %i.fa.fa-times.times02
         / チャートに関する記述ここから
@@ -68,7 +74,10 @@
     .main-text__right
       %i.fa.fa-certificate.main-text__right--icon
         .main-text__right--icon__click
-          = link_to "未来を分析する", future_new_answers_path
+          - if @future_total_rank == [0, 0, 0, 0, 0, 0]
+            = link_to "未来を分析する", future_new_answers_path
+          - else
+            未来の分析結果を表示する
       .main-text__right--future-bar
         %i.fa.fa-times.times03
         / チャートに関する記述ここから
