@@ -15,6 +15,9 @@ Rails.application.routes.draw do
       get 'past_new'
       get 'now_new'
       get 'future_new'
+      delete 'past_destroy'
+      delete 'now_destroy'
+      delete 'future_destroy'
     end
   end
 end

@@ -7,18 +7,8 @@
           クリック
       .main-text__left--past-bar
         %i.fa.fa-times.times01
-
         / チャートに関する記述ここから
         #status-wrapper
-          -# - pInde = 0 & pExec = 0 & pCrea = 0 & pPlan = 0 & pTeam = 0 & pComm = 0
-          -# - if @answers.present?
-            -# - @past_independence.zip(@past_execution, @past_creativity, @past_planning, @past_teamwork, @past_communication).each do | past_independence, past_execution, past_creativity, past_planning, past_teamwork, past_communication |
-            -#   - pInde += past_independence.answer.rank
-            -#   - pExec += past_execution.answer.rank
-            -#   - pCrea += past_creativity.answer.rank
-            -#   - pPlan += past_planning.answer.rank
-            -#   - pTeam += past_teamwork.answer.rank
-            -#   - pComm += past_communication.answer.rank
           - pInde = @past_total_rank[0]
           - pExec = @past_total_rank[1]
           - pCrea = @past_total_rank[2]
@@ -41,7 +31,8 @@
           %canvas#pChart{height: "400",  width: "400"}
           = link_to "診断結果の詳細を見る", "#"
           / ここまで
-      
+          - if @past_total_rank != [0, 0, 0, 0, 0, 0]
+            = link_to "回答を全て削除する",past_destroy_answers_path, method: :delete
     .main-text__center
       %i.fa.fa-certificate.main-text__center--icon
         .main-text__center--icon__click
@@ -50,15 +41,6 @@
         %i.fa.fa-times.times02
         / チャートに関する記述ここから
         #status-wrapper
-          -# - nInde = 0 & nExec = 0 & nCrea = 0 & nPlan = 0 & nTeam = 0 & nComm = 0
-          -# - if @answers.present?
-            -# - @now_independence.zip(@now_execution, @now_creativity, @now_planning, @now_teamwork, @now_communication).each do | now_independence, now_execution, now_creativity, now_planning, now_teamwork, now_communication |
-            -#   - nInde += now_independence.answer.rank
-            -#   - nExec += now_execution.answer.rank
-            -#   - nCrea += now_creativity.answer.rank
-            -#   - nPlan += now_planning.answer.rank
-            -#   - nTeam += now_teamwork.answer.rank
-            -#   - nComm += now_communication.answer.rank
           - nInde = @now_total_rank[0]
           - nExec = @now_total_rank[1]
           - nCrea = @now_total_rank[2]
@@ -81,6 +63,8 @@
           %canvas#nChart{height: "400",  width: "400"}
           = link_to "診断結果の詳細を見る", "#"
           / ここまで
+          - if @now_total_rank != [0, 0, 0, 0, 0, 0]
+            = link_to "回答を全て削除する", now_destroy_answers_path, method: :delete
     .main-text__right
       %i.fa.fa-certificate.main-text__right--icon
         .main-text__right--icon__click
@@ -89,15 +73,6 @@
         %i.fa.fa-times.times03
         / チャートに関する記述ここから
         #status-wrapper
-          -# - fInde = 0 & fExec = 0 & fCrea = 0 & fPlan = 0 & fTeam = 0 & fComm = 0
-          -# - if @answers.present?
-            -# - @future_independence.zip(@future_execution, @future_creativity, @future_planning, @future_teamwork, @future_communication).each do | future_independence, future_execution, future_creativity, future_planning, future_teamwork, future_communication |
-            -#   - fInde += future_independence.answer.rank
-            -#   - fExec += future_execution.answer.rank
-            -#   - fCrea += future_creativity.answer.rank
-            -#   - fPlan += future_planning.answer.rank
-            -#   - fTeam += future_teamwork.answer.rank
-            -#   - fComm += future_communication.answer.rank
           - fInde = @future_total_rank[0]
           - fExec = @future_total_rank[1]
           - fCrea = @future_total_rank[2]
@@ -120,6 +95,8 @@
           %canvas#fChart{height: "400",  width: "400"}
           = link_to "診断結果の詳細を見る", "#"
           / ここまで
+          - if @future_total_rank != [0, 0, 0, 0, 0, 0]
+            = link_to "回答を全て削除する", future_destroy_answers_path, method: :delete
 - else
   .all
     .body
