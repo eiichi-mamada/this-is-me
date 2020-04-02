@@ -26,12 +26,6 @@ class AnswersController < ApplicationController
     end
     redirect_to root_path
 
-    # @answers = AnswerCollection.new(answers_params)
-    # if @answers.save
-    #   redirect_to root_path
-    # else
-    #   render :new
-    # end
   end
 
   def edit
@@ -40,6 +34,35 @@ class AnswersController < ApplicationController
   def update
   end
 
+  def past_destroy
+    questions = Question.where(status: 0)
+
+    questions.each do |question|
+      answer = Answer.find_by(question_id: question.id)
+      answer.destroy
+    end
+    redirect_to root_path
+  end
+
+  def now_destroy
+    questions = Question.where(status: 1)
+
+    questions.each do |question|
+      answer = Answer.find_by(question_id: question.id)
+      answer.destroy
+    end
+    redirect_to root_path
+  end
+
+  def future_destroy
+    questions = Question.where(status: 2)
+
+    questions.each do |question|
+      answer = Answer.find_by(question_id: question.id)
+      answer.destroy
+    end
+    redirect_to root_path
+  end
   def past_index
     @questions = Question.where(status: 0)
   end

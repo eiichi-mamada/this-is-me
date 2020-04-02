@@ -5,8 +5,6 @@ class AnswerCollection
   include ActiveModel::AttributeMethods
   include ActiveModel::Validations
 
-  # @@questions = Question.where(status: 0)  #クラス変数を用いて過去のquestionを渡す
-
   attr_accessor :collection  # ここに作成したanserモデルが格納される
 
   # 初期化メソッド
@@ -28,27 +26,5 @@ class AnswerCollection
       end
     end
   end
-
-  # レコードが存在するか確認するメソッド
-  def persisted?
-    false
-  end
-
-  # # コレクションをDBに保存するメソッド
-  # def save
-  #   is_success = true
-  #   ActiveRecord::Base.transaction do
-  #     collection.each do |result|
-  #       # バリデーションを全てかけたいからsave!ではなくsaveを使用
-  #       is_success = false unless result.save
-  #     end
-  #     # バリデーションエラーがあった時は例外を発生させてロールバックさせる
-  #     raise ActiveRecord::RecordInvalid unless is_success
-  #   end
-  #   rescue
-  #     p 'エラー'
-  #   ensure
-  #     return is_success
-  # end
 
 end
