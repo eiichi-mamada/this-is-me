@@ -18,6 +18,9 @@ Rails.application.routes.draw do
       delete 'past_destroy'
       delete 'now_destroy'
       delete 'future_destroy'
+      get 'past_index'
+      get 'now_index'
+      get 'future_index'
     end
   end
 end

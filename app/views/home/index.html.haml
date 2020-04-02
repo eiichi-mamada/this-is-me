@@ -4,7 +4,7 @@
     .main-text__left
       %i.fa.fa-certificate.main-text__left--icon
         .main-text__left--icon__click
-          クリック
+          = link_to "過去を分析する", past_new_answers_path
       .main-text__left--past-bar
         %i.fa.fa-times.times01
         / チャートに関する記述ここから
@@ -29,14 +29,14 @@
             = "過去『コミュニケーション』累計: #{pComm}ポイント"
           / チャート描画
           %canvas#pChart{height: "400",  width: "400"}
-          = link_to "診断結果の詳細を見る", "#"
+          = link_to "診断結果の詳細を見る", past_index_answers_path
           / ここまで
           - if @past_total_rank != [0, 0, 0, 0, 0, 0]
             = link_to "回答を全て削除する",past_destroy_answers_path, method: :delete
     .main-text__center
       %i.fa.fa-certificate.main-text__center--icon
         .main-text__center--icon__click
-          クリック
+          = link_to "現在を分析する", now_new_answers_path
       .main-text__center--present-bar
         %i.fa.fa-times.times02
         / チャートに関する記述ここから
@@ -61,14 +61,14 @@
             = "現在『コミュニケーション』累計: #{nComm}ポイント"
           / チャート描画
           %canvas#nChart{height: "400",  width: "400"}
-          = link_to "診断結果の詳細を見る", "#"
+          = link_to "診断結果の詳細を見る", now_index_answers_path
           / ここまで
           - if @now_total_rank != [0, 0, 0, 0, 0, 0]
             = link_to "回答を全て削除する", now_destroy_answers_path, method: :delete
     .main-text__right
       %i.fa.fa-certificate.main-text__right--icon
         .main-text__right--icon__click
-          クリック
+          = link_to "未来を分析する", future_new_answers_path
       .main-text__right--future-bar
         %i.fa.fa-times.times03
         / チャートに関する記述ここから
@@ -93,7 +93,7 @@
             = "未来『コミュニケーション』累計: #{fComm}ポイント"
           / チャート描画
           %canvas#fChart{height: "400",  width: "400"}
-          = link_to "診断結果の詳細を見る", "#"
+          = link_to "診断結果の詳細を見る", future_index_answers_path
           / ここまで
           - if @future_total_rank != [0, 0, 0, 0, 0, 0]
             = link_to "回答を全て削除する", future_destroy_answers_path, method: :delete

@@ -63,6 +63,18 @@ class AnswersController < ApplicationController
     end
     redirect_to root_path
   end
+  def past_index
+    @questions = Question.where(status: 0)
+  end
+
+  def now_index
+    @questions = Question.where(status: 0)
+  end
+
+  def future_index
+    @questions = Question.where(status: 0)
+  end
+
 
 
   private
