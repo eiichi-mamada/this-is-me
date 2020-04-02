@@ -40,6 +40,18 @@ class AnswersController < ApplicationController
   def update
   end
 
+  def past_index
+    @questions = Question.where(status: 0)
+  end
+
+  def now_index
+    @questions = Question.where(status: 0)
+  end
+
+  def future_index
+    @questions = Question.where(status: 0)
+  end
+
 
 
   private
