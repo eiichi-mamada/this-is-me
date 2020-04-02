@@ -34,6 +34,14 @@ set :default_env, {
   BASIC_AUTH_PASSWORD: ENV["BASIC_AUTH_PASSWORD"]
 }
 
+namespace :deploy do
+  desc "Load the seed data from db/seeds.rb"
+  task :seed do
+    run "cd #{current_path}; bundle exec rake db:seed RAILS_ENV=#{rails_env}"
+  end
+end
+after 'deploy:migrate', 'deploy:seed'
+
 # デプロイ処理が終わった後、Unicornを再起動するための記述
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
